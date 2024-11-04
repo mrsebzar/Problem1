@@ -1,0 +1,43 @@
+Error while generating pawn. Rethrowing. Exception: System.MissingMethodException: bool Verse.AI.MentalStateHandler.TryStartMentalState(Verse.MentalStateDef,string,bool,bool,Verse.Pawn,bool,bool,bool)
+[Ref 6FA7ECF0]
+ at GiddyUp.Harmony.Patch_MakeDowned.Postfix (Verse.Pawn_HealthTracker __instance) [0x0002b] in <2c06e926398e44819faafd8e89da05b0>:0 
+ at Verse.Pawn_HealthTracker.MakeDowned (System.Nullable`1[T] dinfo, Verse.Hediff hediff) [0x00534] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - PREFIX SmashPhil.VehicleFramework: Boolean Vehicles.HealthAndStats:VehiclesCantBeDowned(Pawn ___pawn)
+     - POSTFIX VFEEmpire.Mod: Void VFEEmpire.HarmonyPatches.Patch_StateChange:Postfix(PawnHealthState ___healthState, Pawn ___pawn)
+     - POSTFIX alt4s.visitsettlements: Void VS_Pawn_Downed_Patch:Postfix(Pawn_HealthTracker __instance)
+     - POSTFIX GiddyUp: Void GiddyUp.Harmony.Patch_MakeDowned:Postfix(Pawn_HealthTracker __instance)
+ at Verse.Pawn_HealthTracker.CheckForStateChange (System.Nullable`1[T] dinfo, Verse.Hediff hediff) [0x00457] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - POSTFIX OskarPotocki.VFECore: Void VFECore.Patch_Pawn_HealthTracker+CheckForStateChange:Postfix(Pawn_HealthTracker __instance, Pawn ___pawn)
+ at Verse.Pawn_HealthTracker.AddHediff (Verse.Hediff hediff, Verse.BodyPartRecord part, System.Nullable`1[T] dinfo, Verse.DamageWorker+DamageResult result) [0x00103] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - PREFIX VAEInsanityMod: Boolean VAEInsanity.Pawn_HealthTracker_AddHediff_Patch:Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, Hediff& hediff, BodyPartRecord part, Nullable`1 dinfo, DamageResult result)
+     - PREFIX OskarPotocki.VanillaPsycastsExpanded: Boolean VanillaPsycastsExpanded.Pawn_HealthTracker_AddHediff_Patch:Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, Hediff hediff, BodyPartRecord part, Nullable`1 dinfo, DamageResult result)
+     - PREFIX SmashPhil.VehicleFramework: Boolean Vehicles.HealthAndStats:VehiclesDontAddHediffs(Pawn ___pawn)
+     - POSTFIX legodude17.mvcf: Void MVCF.PatchSets.Trackers.PatchSet_Hediffs:AddHediff_Postfix(Hediff hediff, Pawn_HealthTracker __instance)
+ at Verse.HediffGiverUtility.TryApply (Verse.Pawn pawn, Verse.HediffDef hediff, System.Collections.Generic.IEnumerable`1[T] partsToAffect, System.Boolean canAffectAnyLivePart, System.Int32 countToAffect, System.Collections.Generic.List`1[T] outAddedHediffs, System.Boolean useCoverage) [0x00127] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+ at Verse.HediffGiver.TryApply (Verse.Pawn pawn, System.Collections.Generic.List`1[T] outAddedHediffs) [0x000d1] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+ at Verse.HediffGiver_Birthday.TryApplyAndSimulateSeverityChange (Verse.Pawn pawn, System.Single gotAtAge, System.Boolean tryNotToKillPawn) [0x0000a] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+ at RimWorld.AgeInjuryUtility.GenerateRandomOldAgeInjuries (Verse.Pawn pawn, System.Boolean tryNotToKillPawn) [0x0034c] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+ at Verse.PawnGenerator.GenerateInitialHediffs (Verse.Pawn pawn, Verse.PawnGenerationRequest request) [0x00042] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - POSTFIX OskarPotocki.VFECore: Void VFECore.Patch_PawnGenerator+GenerateInitialHediffs:Postfix(Pawn pawn)
+ at Verse.PawnGenerator.TryGenerateNewPawnInternal (Verse.PawnGenerationRequest& request, System.String& error, System.Boolean ignoreScenarioRequirements, System.Boolean ignoreValidator) [0x00959] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - TRANSPILER VFEEmpire.Mod: IEnumerable`1 VFEEmpire.HarmonyPatches.Patch_PawnGenerator:Transpiler(IEnumerable`1 instructions)
+ at Verse.PawnGenerator.GenerateNewPawnInternal (Verse.PawnGenerationRequest& request) [0x0009d] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - POSTFIX OskarPotocki.VFECore: Void VFECore.Abilities.PawnGen_Patch:Postfix(Pawn __result)
+     - POSTFIX OskarPotocki.VanillaPsycastsExpanded: Void VanillaPsycastsExpanded.PawnGen_Patch:Postfix(Pawn __result, PawnGenerationRequest request)
+ at Verse.PawnGenerator.GenerateOrRedressPawnInternal (Verse.PawnGenerationRequest request) [0x00136] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+ at Verse.PawnGenerator.GeneratePawn (Verse.PawnGenerationRequest request) [0x00035] in <2a40c3593b334f29ac3cb3d32d652351>:0 
+     - PREFIX SmashPhil.VehicleFramework: Boolean Vehicles.Construction:GenerateVehiclePawn(PawnGenerationRequest request, Pawn& __result)
+     - POSTFIX VFEPirates.Mod: Void VFEPirates.PawnGenerator_GeneratePawn_Patch:Postfix(Pawn __result)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.Log.Error_Patch1 (string)
+(wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition:Verse.PawnGenerator.GeneratePawn_Patch2 (Verse.PawnGenerationRequest)
+EdB.PrepareCarefully.ManagerPawns:CreatePawn (Verse.PawnGenerationRequest)
+EdB.PrepareCarefully.ManagerPawns:RandomizePawn (EdB.PrepareCarefully.CustomizedPawn,EdB.PrepareCarefully.PawnRandomizerOptions)
+EdB.PrepareCarefully.ControllerTabViewPawns:RandomizeCurrentPawn ()
+EdB.PrepareCarefully.PanelRandomize:DrawForBiotech ()
+EdB.PrepareCarefully.PanelRandomize:Draw ()
+EdB.PrepareCarefully.TabViewPawns:Draw (UnityEngine.Rect)
+EdB.PrepareCarefully.PagePrepareCarefully:DrawTabViews (UnityEngine.Rect)
+EdB.PrepareCarefully.PagePrepareCarefully:DoWindowContents (UnityEngine.Rect)
+Verse.Window:InnerWindowOnGUI (int)
+UnityEngine.GUI:CallWindowDelegate (UnityEngine.GUI/WindowFunction,int,int,UnityEngine.GUISkin,int,single,single,UnityEngine.GUIStyle)
